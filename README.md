@@ -18,6 +18,7 @@ ___
 
     npm install
     
+    
 //在main.js中引入
 
     import Live2d from './components/Live2d'
@@ -41,8 +42,7 @@ ___
 //在index.html中引入
 
     <script src="live2d/js/jquery.min.js"></script>
-    <script src="live2d/js/live2d.js"></script>
-    <script src="live2d/js/animate.js"></script>
+
 ```
 ___
 >OK啦，就是这么简单！ 接下来是各位大大个性化的阶段：
