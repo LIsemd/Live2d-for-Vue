@@ -13,7 +13,10 @@
 
 <script>
   //路径以.vue文件为起点
-  import '../../public/live2d/js/message';
+  import '../static/js/message'
+  import '../static/js/animate'
+  import '../static/js/live2d'
+
   export default {
     name: 'Live2d',
     data() {
@@ -30,7 +33,7 @@
       }, 1500);
     },
     mounted() {
-      playAnimate(this.$refs.box,this.$refs.ball,9);
+      playAnimate(this.$refs.box,this.$refs.ball,10);
     }
   }
 
@@ -117,7 +120,6 @@
     float: left;
     transition: all 1.8s linear;
     background: url("../../public/live2d/model/rem/11.jpg") no-repeat;
-    border-radius: 50%;
   }
 
   .item-ball:nth-child(1), .item-ball:nth-child(2) {

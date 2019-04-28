@@ -1,5 +1,5 @@
 /**
- * 图片细化 
+ * 图片细化
  * @param box
  * @param ball
  * @param dia
@@ -19,7 +19,7 @@ function playAnimate(box, ball, dia) {
   }
   box.appendChild(frag);
 }
-
+window.playAnimate = playAnimate;
 function randNum(min, max) {
   return (Math.random() * (max - min) + min);
 }
@@ -38,5 +38,5 @@ function disappear() {
     });
   });
 }
-
+window.disappear = disappear;
 

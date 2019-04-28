@@ -7,7 +7,7 @@
 >
 >大部分预期功能仍未添加，就作为第一个小版本⑧
 ___
->#### 第一步：克隆代码，将public下的**live2d文件**导入你的public中    
+>#### 第一步：克隆代码，将public下的**live2d文件**和static路径下的**js文件**导入你的对应文件中    
 ___
 >#### 第二步：将components下的**Live2d.vue组件**导入你的components中  
 ___
