@@ -24,7 +24,7 @@ String.prototype.renderTip = function (context) {
 function initTips() {
   $.ajax({
     cache: true,
-    url: `live2d/message.json`,
+    url: 'live2d/message.json',
     dataType: "json",
     success: function (result) {
       $.each(result.mouseover, function (index, tips) {
@@ -32,7 +32,7 @@ function initTips() {
           var text = tips.text;
           if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
           text = text.renderTip({text: $(this).text()});
-          showMessage(text, 3000);
+          showMessage(text, 5000);
         });
       });
       $.each(result.click, function (index, tips) {
@@ -40,7 +40,7 @@ function initTips() {
           var text = tips.text;
           if (Array.isArray(tips.text)) text = tips.text[Math.floor(Math.random() * tips.text.length + 1) - 1];
           text = text.renderTip({text: $(this).text()});
-          showMessage(text, 3000);
+          showMessage(text, 5000);
         });
       });
     }
@@ -76,7 +76,7 @@ setTimeout(function () {
   showDateTip();
 }, 4000);
 
-window.setInterval(showHitokoto, 15000);
+window.setInterval(showHitokoto, 16000);
 
 function showHitokoto() {
   $.getJSON('https://v1.hitokoto.cn/', function (result) {
@@ -85,7 +85,9 @@ function showHitokoto() {
 }
 
 function showMessage(text, timeout) {
-  if (Array.isArray(text)) text = text[Math.floor(Math.random() * text.length + 1) - 1];
+  if (Array.isArray(text)) {
+    text = text[Math.floor(Math.random() * text.length + 1) - 1];
+  }
   if (text.length <= 32) {
     var msg = $('.msg');
     var messageBox = $('.messageBox');
