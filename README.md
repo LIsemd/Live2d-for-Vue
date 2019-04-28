@@ -70,7 +70,7 @@ ___
 ___
 ### 现在就可以尝试运行你的程序，内含**小彩蛋**哟(≧∀≦)ゞ
 ```
-npm run serve
+npm run serve && npm run build
 ```
 ___
 
