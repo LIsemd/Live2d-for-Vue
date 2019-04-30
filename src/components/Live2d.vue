@@ -1,39 +1,45 @@
 <template>
-  <div id="landlord">
+  <div id="landlord" >
     <div class="boomCont" id="boomCont" ref="box">
       <div class="item-ball" ref="ball"></div>
     </div>
-    <div class="messageBox">
+    <header class="messageBox">
       <span class="msg"></span>
       <span class="dot"></span>
-    </div>
-    <canvas id="live2d" width="340" height="360" class="live2d"></canvas>
+    </header>
+    <canvas id="live2d" width="340px" height="360px" class="live2d" @mouseover="prompt"></canvas>
   </div>
 </template>
 
 <script>
   //路径以.vue文件为起点
   import '../static/js/message'
-  import '../static/js/animate'
+  import * as animate from '../static/js/animate'
   import '../static/js/live2d'
 
   export default {
     name: 'Live2d',
     data() {
       return {
-        frag : document.createDocumentFragment()
     }
     },
     created() {
+      //延迟调用，防止DOM未加载完成
+      //路径以index.html为起点
       setTimeout(function () {
-        //延迟调用，防止DOM未加载完成
-        //路径以index.html为起点
-        disappear();
+        animate.disappear();
+      },1000);
+      setTimeout(function () {
         loadlive2d('live2d', "live2d/model/rem/rem.json");
-      }, 1500);
+      }, 2000);
     },
     mounted() {
-      playAnimate(this.$refs.box,this.$refs.ball,10);
+      animate.playAnimate(this.$refs.box,this.$refs.ball,10);
+    },
+    methods:{
+      prompt(){
+
+      }
     }
   }
 
@@ -82,6 +88,7 @@
     font-size: 13px;
     word-wrap: break-spaces;
     font-weight: 400;
+    user-select:none;
   }
 
   .dot {
@@ -120,6 +127,7 @@
     float: left;
     transition: all 1.8s linear;
     background: url("../../public/live2d/model/rem/11.jpg") no-repeat;
+    background-size: 200px 354px;
   }
 
   .item-ball:nth-child(1), .item-ball:nth-child(2) {

@@ -4,7 +4,7 @@
  * @param ball
  * @param dia
  */
-function playAnimate(box, ball, dia) {
+export function playAnimate(box, ball, dia) {
   var rNum = parseInt(box.getBoundingClientRect().height / dia),
     cNum = parseInt(box.getBoundingClientRect().width / dia),
     frag = document.createDocumentFragment();
@@ -19,7 +19,6 @@ function playAnimate(box, ball, dia) {
   }
   box.appendChild(frag);
 }
-window.playAnimate = playAnimate;
 function randNum(min, max) {
   return (Math.random() * (max - min) + min);
 }
@@ -27,7 +26,7 @@ function randNum(min, max) {
 /**
  * 图片破碎效果
  */
-function disappear() {
+export function disappear() {
   $('.test-img').fadeOut(1000);
   $('.item-ball').each(function () {
     $(this).animate({
@@ -38,5 +37,4 @@ function disappear() {
     });
   });
 }
-window.disappear = disappear;
 

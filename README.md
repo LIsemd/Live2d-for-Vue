@@ -34,7 +34,7 @@ ___
     export default {
       name: 'home',
       components: {
-        /*其他组件*/,
+        /*其他组件*/
         Live2d
       }
     } 
@@ -54,7 +54,7 @@ ___
     
     message.js —— Live2d动画效果设置
     
-    message.json —— 交互文字设置，暂未设置
+    message.json —— 交互文字设置
     
     栗子酱： "mouseover": [
                {
